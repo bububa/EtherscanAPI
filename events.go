@@ -72,7 +72,6 @@ func (a *API) GetLogs(fromBlock string, toBlock string, address string, topics [
 		}
 		baseURL += fmt.Sprintf("&topic%d=%s", i, topics[i])
 	}
-	fmt.Println(baseURL)
 	resp, err := http.Get(baseURL)
 	if err != nil {
 		return EventRec{Status: "NOTOK", Message: err.Error()}
